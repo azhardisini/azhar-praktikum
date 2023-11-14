@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>REGISTRASI KENDARAAN ANDA </h3>
+    <form action="/action_page.php">
+        <p>status:</p>
+        <input type="radio" id="html" name="status" value="dosen">
+        <label for="dosen">dosen</label><br>
+        <input type="radio" id="mahasiswa" name="status" value="mahasiswa">
+        <label for="mahasiswa">mahasiswa</label><br>
+    </form>
+    <form action="/action_page.php">
+        <label for="fname">NIM:</label>
+        <input type="text" id="fname" name="fname">
+        
+    </form> 
+    <form action="/action_page.php">
+        <label for="fname">nama lengkap:</label>
+        <input type="text" id="fname" name="fname">
+        
+    </form> 
+<label for="cars">prodi:</label>
+
+<select id="prodi">
+  <option value="TI">TI</option>
+  <option value="SI">SI</option>
+  <option value="BD">BD</option>
+</select>
+<form action="/action_page.php">
+    <p>jenis kendaraan:</p>
+    <input type="radio" id="motor" name="jenis kendaraan" value="motor">
+    <label for="motor">motor</label><br>
+    <input type="radio" id="mobil" name="jenis kendaraan" value="mobil">
+    <label for="mobil">mobil</label><br>
+</form>
+<form action="/action_page.php">
+    <label for="fname">nopol:</label>
+    <input type="text" id="fname" nopol="fname">
+</form>
+<form action="/action_page.php">
+    <label for="fname">merek:</label>
+    <input type="text" id="fname"merek="fname">
+</form>
+<form action="/action_page.php">
+    <label for="fname">upload STNK:</label>
+    <input type="PICTURE" id="fname"upload="fname">
+</form>
+<form>
+     <input type="submit" value="daftar">
+     <input type="submit" value="brows">
+</form>
+        
+      
+  
+</body>
+    
+</body>
+</html>
