@@ -1,0 +1,43 @@
+header,
+footer {
+    height: 20vh;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid rgb(253, 7, 7);
+}
+
+.content {
+    height: 60vh;
+    display: flex;
+    border: 10px solid rgb(120, 10, 237);
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    border: 10px solid rgb(147, 13, 13);
+    margin: 30px;
+}
+
+.article {
+    flex-grow: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid rgb(9, 29, 209), 0, 0);
+}
+
+article{
+    margin-top: 120px;
+}
+
+aside {
+    background-color: pink;
+    flex-grow: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid rgb(216, 161, 161);
+}
