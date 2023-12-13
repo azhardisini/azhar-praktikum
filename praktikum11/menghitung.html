@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menghitung Jumlah Dua Bilangan</title>
+    <script>
+        function hitungJumlah() {
+    let bil1 = parseInt(document.getElementById("bil1").value);
+    let bil2 = parseInt(document.getElementById("bil2").value);
+    let jumlah = bil1 + bil2;
+
+    document.getElementById("jumlah").value = jumlah;
+}
+    </script>
+</head>
+<body>
+    <h2>Menghitung Jumlah Dua Bilangan</h2>
+    <label for="bil1">Bilangan 1:</label>
+    <input type="number" id="bil1" onChange="hitungJumlah()" />
+    <br />
+    <label for="bil2">Bilangan 2:</label>
+    <input type="number" id="bil2" onChange="hitungJumlah()" />
+    <br />
+    <label for="jumlah">Hasil:</label>
+    <input type="number" id="jumlah" readonly />
+
+    <script src="app.js"></script>
+</body>
+</html>
