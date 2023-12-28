@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <label for="namaPelanggan">Nama Pelanggan:</label>
+        <input type="text" id="namaPelanggan" name="namaPelanggan" required maxlength="30">
+        <span id="namaPelangganError"></span><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span id="emailError"></span><br>
+
+        <label for="jamKeberangkatan">Jam Keberangkatan:</label>
+        <input type="time" id="jamKeberangkatan" name="jamKeberangkatan" required>
+        <span id="jamKeberangkatanError"></span><br>
+
+        <label for="tujuanKeberangkatan">Tujuan Keberangkatan:</label>
+        <input type="text" id="tujuanKeberangkatan" name="tujuanKeberangkatan" required>
+        <span id="tujuanKeberangkatanError"></span><br>
+
+        <label for="jumlahTiket">Jumlah Tiket:</label>
+        <input type="number" id="jumlahTiket" name="jumlahTiket" required min="1" max="10">
+        <span id="jumlahTiketError"></span><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        const myForm = document.getElementById('myForm');
+
+        myForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const namaPelanggan = document.getElementById('namaPelanggan');
+            const email = document.getElementById('email');
+            const jamKeberangkatan = document.getElementById('jamKeberangkatan');
+            const tujuanKeberangkatan = document.getElementById('tujuanKeberangkatan');
+            const jumlahTiket = document.getElementById('jumlahTiket');
+
+            const namaPelangganError = document.getElementById('namaPelangganError');
+            const emailError = document.getElementById('emailError');
+            const jamKeberangkatanError = document.getElementById('jamKeberangkatanError');
+            const tujuanKeberangkatanError = document.getElementById('tujuanKeberangkatanError');
+            const jumlahTiketError = document.getElementById('jumlahTiketError');
+
+            let valid = true;
+
+
+            
+            if (namaPelanggan.value.trim() === '') {
+                namaPelangganError.textContent = 'Nama Pelanggan harus diisi';
+                valid = false;
+            } else {
+                namaPelangganError.textContent = '';
+            }
+
+            
+            if (email.value.trim() === '') {
+                emailError.textContent = 'Email harus diisi';
+                valid = false;
+            } else {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!regex.test(email.value)) {
+                    emailError.textContent = 'Email tidak valid';
+                    valid = false;
+                } else {
+                    emailError.textContent = '';
+                }
+            }
+
+            
+            if (jamKeberangkatan.value.trim() === '') {
+                jamKeberangkatanError.textContent = 'Jam Keberangkatan harus diisi';
+            }
+            if (jamKeberangkatan.value.trim() === '') {
+                jamKeberangkatanError.textContent = 'Jam Keberangkatan harus diisi';
+                valid = false;
+            } else {
+                jamKeberangkatanError.textContent = '';
+            }
+
+           
+            if (tujuanKeberangkatan.value.trim() === '') {
+                tujuanKeberangkatanError.textContent = 'Tujuan Keberangkatan harus diisi';
+                valid = false;
+            } else {
+                tujuanKeberangkatanError.textContent = '';
+            }
+
+            
+            if (jumlahTiket.value.trim() === '') {
+                jumlahTiketError.textContent = 'Jumlah Tiket harus diisi';
+                valid = false;
+            } else if (isNaN(jumlahTiket.value) || parseInt(jumlahTiket.value) < 1 || parseInt(jumlahTiket.value) > 10) {
+                jumlahTiketError.textContent = 'Jumlah Tiket harus antara 1 dan 10';
+                valid = false;
+            } else {
+                jumlahTiketError.textContent = '';
+            }
+
+            // Submit the form if valid
+            if (valid) {
+                // You can add your code here to submit the form or perform other actions
+                // For example: myForm.submit();
+            }
+        });
+    </script>
+</body>
+
+</html>

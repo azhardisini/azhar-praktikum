@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurs Rupiah</title>
+    <style>
+        /* CSS disini */
+    </style>
+</head>
+<body>
+    <h1>Kurs Rupiah</h1>
+    <form id="currencyForm">
+        <label for="amount">Nilai Valas:</label>
+        <input type="number" id="amount" required>
+        <br>
+        <label for="currency">Valas:</label>
+        <select id="currency" required>
+            <option value="dollar">Dollar US</option>
+            <option value="dollarSingapore">Dollar Singapore</option>
+            <option value="ringgit">Ringgit Malaysia</option>
+            <option value="yen">Yen Jepang</option>
+            <option value="euro">Euro</option>
+            <option value="riyal">Riyal Arab Saudi</option>
+        </select>
+        <br>
+        <input type="submit" value="Hitung">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        const form = document.getElementById('currencyForm');
+const amountInput = document.getElementById('amount');
+const currencySelect = document.getElementById('currency');
+const resultParagraph = document.getElementById('result');
+
+const currencyValues = {
+    dollar: 9.915,
+    dollarSingapore: 13.472,
+    ringgit: 874,
+    yen: 120,
+    euro: 15.888,
+    riyal: 3.592
+};
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const amount = parseFloat(amountInput.value);
+    const selectedCurrency = currencySelect.options[currencySelect.selectedIndex].value;
+    const conversionRate = currencyValues[selectedCurrency];
+
+    const convertedAmount = amount * conversionRate;
+
+    resultParagraph.textContent = `Nilai Rupiah: ${convertedAmount.toFixed(2)}`;
+});
+    </script>
+</body>
+</html>
